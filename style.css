@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #000;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+/* CARD — NEON GLASS */
+.card {
+    width: 90%;
+    max-width: 420px;
+    margin: 80px auto;
+    padding: 35px;
+    border-radius: 22px;
+    backdrop-filter: blur(20px) brightness(1.2);
+    background: rgba(20, 20, 20, 0.35);
+    border: 2px solid;
+    border-image: linear-gradient(130deg,
+    #00f, #0ff, #ff00ff, #ff0055) 1;
+    animation: borderFlow 6s linear infinite;
+    box-shadow: 0 0 25px rgba(0, 140, 255, 0.4);
+}
+
+@keyframes borderFlow {
+    0% { border-image-source: linear-gradient(0deg, #00f, #0ff, #ff00ff); }
+    50% { border-image-source: linear-gradient(180deg, #ff00ff, #0ff, #00f); }
+    100% { border-image-source: linear-gradient(360deg, #00f, #0ff, #ff00ff); }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 32px;
+    color: #fff;
+    text-shadow: 0 0 12px #0ff;
+}
+
+/* Ícones */
+.icons-top {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.icon {
+    font-size: 26px;
+    color: #0ff;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.icon:hover {
+    color: #fff;
+    text-shadow: 0 0 14px #0ff, 0 0 24px #0ff;
+    transform: scale(1.15);
+}
+
+/* Botões */
+.btn {
+    display: block;
+    padding: 14px;
+    margin: 10px 0;
+    text-align: center;
+    border-radius: 14px;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(0, 255, 255, .5);
+    text-decoration: none;
+    font-size: 18px;
+    color: #0ff;
+    transition: .25s;
+}
+
+.btn:hover {
+    background: rgba(0, 255, 255, 0.15);
+    transform: scale(1.04);
+    box-shadow: 0 0 12px #0ff;
+}
+
+/* Partículas */
+canvas#particles {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -1;
+}
+
+/* Botão engrenagem */
+.settings-btn {
+    position: fixed;
+    top: 22px;
+    right: 22px;
+    width: 50px;
+    height: 50px;
+    background: #111;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0ff;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 0 12px #0ff;
+    transition: .3s;
+    z-index: 9999;
+}
+
+/* Painel */
+.settings-panel {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    width: 260px;
+    padding: 22px;
+    background: rgba(10, 10, 10, 0.88);
+    border-radius: 18px;
+    backdrop-filter: blur(20px);
+    border: 1px solid #0ff;
+    box-shadow: 0 0 20px #0ff;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: .4s ease;
+    z-index: 9999;
+}
+
+.settings-panel.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.settings-panel button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background: #222;
+    color: #0ff;
+    border-radius: 10px;
+    border: 1px solid #0ff;
+    cursor: pointer;
+}
+
+/* CONTATO */
+.contato {
+    width: 100%;
+    margin-top: 90px;
+    padding-bottom: 180px;
+}
+
+.contato h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.contato-box {
+    width: 92%;
+    max-width: 520px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(20, 20, 20, 0.35);
+    backdrop-filter: blur(15px);
+    border: 2px solid #0ff;
+    box-shadow: 0 0 10px #0ff;
+}
+
+.input-neon,
+.textarea-neon {
+    width: 100%;
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    background: #111;
+    color: #fff;
+}
+
+.textarea-neon {
+    height: 130px;
+}
+
+.btn-enviar {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 12px;
+    background: #0ff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#fadeScreen {
+    display: none;
+}
